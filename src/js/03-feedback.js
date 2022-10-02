@@ -40,6 +40,6 @@ function handleSubmit(event) {
     const result = { email: email.value, message: message.value };
     console.log(result);
     event.currentTarget.reset();
-    localStorage.clear();
+    localStorage.removeItem('feedback-form-state');
   }
 }

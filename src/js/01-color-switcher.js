@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const bodyColor = document.querySelector('body');
 const btnStart = document.querySelector('button[data-start]');
 const btnStop = document.querySelector('button[data-stop]');
@@ -18,6 +20,7 @@ const randomBodyColor = {
   },
   start() {
     btnStart.addEventListener('click', () => {
+      Notify.success('Rozpoczęto zmianę kolorów');
       bodyColor.style.backgroundColor = this.getRandomHexColor();
       this.interval();
       btnStart.disabled = true;
@@ -27,6 +30,7 @@ const randomBodyColor = {
   },
 
   stop() {
+    Notify.failure('Zatrzymano zmianę koloru');
     clearInterval(timerId);
     btnStart.disabled = false;
     btnStop.disabled = true;

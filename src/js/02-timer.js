@@ -52,7 +52,7 @@ function startTimer() {
   btnStart.disabled = true;
   Notify.info('Rozpoczęto odliczanie')
 
-  timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     let endTime = SELECTED_DATE - Date.now();
     const countdown = convertMs(endTime);
     if (endTime <= 0) {

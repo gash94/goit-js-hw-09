@@ -38,4 +38,3 @@ function submitHandler(e) {
   }
 }
 
-form.addEventListener('submit', submitHandler);
